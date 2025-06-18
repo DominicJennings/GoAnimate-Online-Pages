@@ -1,0 +1,213 @@
+<html><head>
+		<meta charset="UTF-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta http-equiv="content-script-type" content="text/javascript">
+		<meta http-equiv="content-style-type" content="text/css">
+		<script src="/pages/js/core-js.js"></script>
+		<script src="/pages/js/regenerator-runtime.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+		<title>Your videos on Wrapper Online Diamond</title>
+		<meta name="description" content="Wrapper: Online Diamond's Video List. Make a video today with Wrapper Online Diamond!">
+		<meta property="og:site_name" content="Wrapper Online Diamond - All In One LVM">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="Video List - Wrapper Online Diamond - All In One LVM">
+		<meta property="og:description" content="Wrapper: Online Diamond's Video List. Make a video today with Wrapper Online Diamond!">
+		<meta property="og:url" content="http://wrapperonlinediamond.waterdroprio.pp.ua/list">
+		<meta property="og:image:secure_url" content="http://wrapperonlinediamond.waterdroprio.pp.ua/pages/img/logo.png"> 
+		<meta property="og:image" content="http://wrapperonlinediamond.waterdroprio.pp.ua/pages/img/logo.png"> 
+		<meta name="keywords" content="Animation, eCard, flash free, web 2.0, cartoon, comics, create animations free, movie, film, video, comedy, drag and drop, wrapper online diamond, wrapper offline diamond, wrapper diamond online, wrapper diamond, wrapperonlinediamond">
+		<meta name="theme-color" content="cyan">
+		<link rel="stylesheet" type="text/css" href="/pages/css/global.css">
+		<link rel="stylesheet" type="text/css" href="/pages/css/list.css">
+		<script src="/pages/js/jquery.js"></script>
+	</head>
+
+	<body>
+		<header>
+	<a href="/">
+		<h1 style="margin:0"><img id="logo" src="/pages/img/logo.png" alt="Wrapper: Online Diamond"></h1>
+	</a>
+	<nav id="headbuttons">
+	
+						
+			<div class="dropdown_contain button_small">
+				<div class="dropdown_button upload_button">YOUR ACCOUNT</div>
+				<nav class="dropdown_menu">
+					<a href="javascript:void(0);">Logged in as Dominic Jennings</a>
+					<a href="/list">Your Videos</a>
+					<a href="/settings">Account Settings</a>
+					<a style="color:#dc143c;" href="/logout">Logout</a>
+				</nav>
+			</div>
+			
+			
+			
+		<div class="dropdown_contain button_small">
+			<div class="dropdown_button upload_button">UPLOAD A MOVIE</div>
+			<nav class="dropdown_menu">
+				<a onclick="document.getElementById('is-starter').checked = false;document.getElementById('file').click()">Upload as movie</a>
+				<a onclick="document.getElementById('is-starter').checked = true;document.getElementById('file').click()">Upload as starter</a>
+			</nav>
+		</div>
+		<a href="/shop" class="button_small">SHOP</a>
+		<a href="/create?filter=cc" class="button_small">CREATE A CHARACTER</a>
+		<a href="/list" class="button_small">YOUR VIDEOS</a>
+		<a href="/make" class="button_big">MAKE A VIDEO</a>
+	</nav>
+</header>
+
+<form id="movie-form" class="hide" enctype="multipart/form-data" action="#" method="post">
+	<input id="file" type="file" name="import" accept=".zip">
+	<input id="is-starter" type="checkbox" value="false">
+</form>
+		<div class="warning" style="color: black;">
+			Wrapper Online Diamond has permanently switched back to the old domain <a href="http://wrapperonlinediamond.waterdroprio.pp.ua">wrapperonlinediamond.waterdroprio.pp.ua</a>. We will no longer be switching domains.
+			<br>Want an outro for your Wrapper Online: Diamond video? Use this outro at the end of your video! <a href="/Outro.mp4">Download outro.</a>
+			<br>REMEMBER, THIS IS NOT GOANIFIRE! THIS IS ACTUALLY BASED ON WRAPPER OFFLINE 2.1.0!
+			<br>
+		</div>
+
+		<main>
+			<nav class="table_filters">
+				<a class="table_filter movies selected" href="javascript:;" onclick="switchFilter(false)">Movies</a>
+				<a class="table_filter starters" href="javascript:;" onclick="switchFilter(true)">Starters</a>
+			</nav>
+			<table>
+				<thead>
+					<tr>
+						<td></td>
+						<td id="search_container"><input id="search_bar" type="text" placeholder="Search Movies"></td>
+						<td>Last Modified</td>
+						<td></td>
+					</tr>
+				</thead>
+				
+				<tfoot>
+					<tr>
+						<td colspan="127"><a id="load_more" href="javascript:;" style="display: none;">LOAD MORE...</a></td>
+					</tr>
+				</tfoot>
+			</table>
+		</main>
+
+		<footer>
+	<nav id="foot-left">
+		<a href="/about">Who we are</a>
+		<a href="/settings">Settings</a>
+		<a href="/faq">FAQ</a>
+		<a href="/termsofuse">Terms of Use</a>
+		<a href="/privacy">Privacy Policy</a>
+		<a href="/legal">Legal Notices</a>
+		<a href="https://discord.gg/yhGAetN">Wrapper Offline Discord</a>
+		<a href="https://discord.gg/goanimate">GoAnimate City Discord</a>
+		<a href="https://groups.google.com/g/wrapper-online-diamond">Wrapper Online Diamond Google Group</a>
+		<a href="/getflash">Get Flash</a>
+	</nav>
+</footer>
+	
+
+	<script src="/pages/js/global.js"></script>
+	<script>
+
+var json,
+  searchTerm = "";
+var starters = true;
+var tbody = $("tbody");
+var loadMore = $("#load_more");
+var searchBar = $("#search_bar");
+var C = 0;
+function loadRows() {
+  // load only 69 rows
+  var c = C;
+  C += 69;
+  for (; c < C; c++) {
+    // we reached the end
+    if (c > json.length - 1) {
+      loadMore.hide();
+      break;
+    }
+    var tbl = json[c];
+    if (tbl.title.toLowerCase().indexOf(searchTerm.toLowerCase()) === -1 && searchTerm.length > 0) {
+      continue;
+    }
+    // make the date and time less confusing to read
+    var date = tbl.date.split("T")[0];
+    var time = tbl.date.split("T")[1].substring(0, 8);
+    // escape the title
+    var title = tbl.title.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    tbody.append("<tr id=\"".concat(tbl.id, "\">\n\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t<img src=\"/file/movie/thumb/").concat(tbl.id, "\" alt=\"thumbnail\"/>\n\t\t\t\t\t\t</td>\n\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t<div>").concat(title, "</div>\n\t\t\t\t\t\t\t<div>").concat(tbl.duration, "</div>\n\t\t\t\t\t\t</td>\n\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t<span>").concat(date, ", ").concat(time, "</span>\n\t\t\t\t\t\t</td>\n\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t<a href=\"javascript:;\" onclick=\"popup('").concat(tbl.id, "')\" title=\"Play\"></a>\n\t\t\t\t\t\t\t<a href=\"/go_full?movieId=").concat(tbl.id).concat(starters ? "&isStarter=1" : "", "\" title=\"Edit\"></a>\n\t\t\t\t\t\t\t<a href=\"/file/movie/file/").concat(tbl.id, "\" download=\"").concat(tbl.title, ".zip\" title=\"Download files -- NOT AN EXPORTER\"></a>\n\t\t\t\t\t\t\t<a href=\"javascript:;\" onclick=\"popupExport('").concat(tbl.id, "')\" title=\"Export\"></a>\n\t\t\t\t\t\t\t<a href=\"javascript:;\" onclick=\"destructive('").concat(tbl.id, "', 'delete')\" title=\"Delete\"></a>\n\t\t\t\t\t\t</td>\n\t\t\t\t\t</tr>").trim());
+  }
+}
+// i want more movies
+loadMore[0].onclick = loadRows;
+searchBar.on("input", function () {
+  searchTerm = searchBar.val();
+  tbody.html("");
+  C = 0;
+  loadMore.show();
+  loadRows();
+});
+function switchFilter(shouldEqual) {
+  if (starters == shouldEqual) return;
+  $(".table_filter").removeClass("selected");
+  if (starters) {
+    starters = false;
+    $(".table_filter.movies").addClass("selected");
+  } else {
+    starters = true;
+    $(".table_filter.starters").addClass("selected");
+  }
+  $.get("/api/movie/list?type=".concat(starters ? "starter" : "movie")).done(function (data) {
+    json = data;
+    tbody.html("");
+    C = 0;
+    loadMore.show();
+    loadRows();
+  });
+}
+switchFilter();
+function destructive(mId, act) {
+  var yesno = confirm("Are you sure you want to ".concat(act, " movie #").concat(mId, "?"));
+  if (yesno) $.get("/api/movie/".concat(act, "/").concat(mId)).done(function (data) {
+    if (data.status == "ok") {
+      switch (act) {
+        case "clone":
+          window.location = "/go_full?movieId=".concat(data.mId);
+          break;
+        case "delete":
+          var $elem = $("#" + mId);
+          $elem.fadeOut(400, function () {
+            return $elem.remove();
+          });
+          break;
+      }
+    } else alert("Guess you're stuck with your movie.");
+  });
+}
+function popup(id) {
+  window.open('/player?movieId=' + id, 'MsgWindow', 'width=1280,height=720,left=' + (screen.width / 2 - 640) + ',top=' + (screen.height / 2 - 360));
+}
+function popupExport(id) {
+  var q;
+  switch (window.prompt("Export a Video:\r\n354 for 354p\r\n480 for 480p\r\n720 for 720p (recomended)\r\n1080 for 1080p")) {
+	case "354":
+		q = "";
+		break;
+	case "480":
+		q = "480";
+		break;
+	case "720":
+		q = "720";
+		break;
+	case "1080":
+		q = "1080";
+		break;
+	default:
+		return;
+  }
+  window.open("/exporter?movieId=".concat(id).concat("&q=").concat(q), 'MsgWindow', 'width=400,height=400,left=' + (screen.width / 2 - 640) + ',top=' + (screen.height / 2 - 360));
+}
+	</script>
+
+</body></html>

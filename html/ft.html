@@ -1,0 +1,997 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<link href="/static/ft/css/movie2.css" rel="stylesheet" type="text/css" />
+<title>FlashThemes - Make your own cartoons and animations easily.</title>
+<link rel="icon" href="/static/ft/favicon.ico">
+<meta property="description" content="FlashThemes is a way to easily create animations and share with the world! You can play around with funny themes.">
+<meta property="keywords" content="Animation, flash free, web 2.0, cartoon, comics, create animations free, comedy, drag and drop, flashthemes">
+<meta name="author" content="FlashThemes">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--[if lte IE 6]><link href="/static/go/css/ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+<!--[if lte IE 7]><style type="text/css">div.header {z-index: 10;}</style><![endif]-->
+<script type="text/javascript">
+    var srv_tz_os = -4,
+    view_name = "ft",
+    user_cookie_name = "ftcookie";
+</script>
+<link rel="stylesheet" href="/static/ft/css/globalnew.css?l=en_US" type="text/css">
+<link rel="stylesheet" href="/static/ft/css/headernew.css" type="text/css">
+<link href="/static/ft/css/DroidSans.css" rel="stylesheet" type="text/css">
+<link href="/static/ft/css/overlay.css" rel="stylesheet" type="text/css">
+<link href="/static/ft/css/buttons.css" rel="stylesheet" type="text/css">
+<link href="/static/ft/css/signup.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/static/ft/js/create.js"></script>
+<script type="text/javascript" src="/static/ft/js/image.js"></script>
+<script type="text/javascript" src="/static/ft/js/swfobject.js"></script>
+<script type="text/javascript" src="/static/ft/js/overlay.js"></script>
+<script type="text/javascript" src="/static/ft/js/gotabs.js"></script>
+<script type="text/javascript" src="/static/ft/js/index.js"></script>
+<script type="text/javascript" src="/static/ft/js/init.js"></script>
+<script type="text/javascript" src="/static/ft/js/go2.js"></script>
+<script type="text/javascript" src="/static/ft/js/overlay.js"></script>
+<script type="text/javascript" src="/static/ft/js/cookie.js"></script>
+<script type="text/javascript" src="/static/ft/js/Gettext.js"></script>
+<script src="https://flashthemes.net/static/ft/js/jquery/jquery-1.12.4.min.js"></script>
+<script src="https://flashthemes.net/static/ft/js/jquery/jquery.js"></script>
+<script src="https://flashthemes.net/static/ft/js/json2.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<script>
+    /*! modernizr 3.6.0 (Custom Build) | MIT *
+    * https://modernizr.com/download/?-setclasses !*/
+    !function(n,e,s){function o(n){var e=r.className,s=Modernizr._config.classPrefix||"";if(c&&(e=e.baseVal),Modernizr._config.enableJSClass){var o=new RegExp("(^|\\s)"+s+"no-js(\\s|$)");e=e.replace(o,"$1"+s+"js$2")}Modernizr._config.enableClasses&&(e+=" "+s+n.join(" "+s),c?r.className.baseVal=e:r.className=e)}function a(n,e){return typeof n===e}function i(){var n,e,s,o,i,l,r;for(var c in f)if(f.hasOwnProperty(c)){if(n=[],e=f[c],e.name&&(n.push(e.name.toLowerCase()),e.options&&e.options.aliases&&e.options.aliases.length))for(s=0;s<e.options.aliases.length;s++)n.push(e.options.aliases[s].toLowerCase());for(o=a(e.fn,"function")?e.fn():e.fn,i=0;i<n.length;i++)l=n[i],r=l.split("."),1===r.length?Modernizr[r[0]]=o:(!Modernizr[r[0]]||Modernizr[r[0]]instanceof Boolean||(Modernizr[r[0]]=new Boolean(Modernizr[r[0]])),Modernizr[r[0]][r[1]]=o),t.push((o?"":"no-")+r.join("-"))}}var t=[],f=[],l={_version:"3.6.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(n,e){var s=this;setTimeout(function(){e(s[n])},0)},addTest:function(n,e,s){f.push({name:n,fn:e,options:s})},addAsyncTest:function(n){f.push({name:null,fn:n})}},Modernizr=function(){};Modernizr.prototype=l,Modernizr=new Modernizr;var r=e.documentElement,c="svg"===r.nodeName.toLowerCase();i(),o(t),delete l.addTest,delete l.addAsyncTest;for(var u=0;u<Modernizr._q.length;u++)Modernizr._q[u]();n.Modernizr=Modernizr}(window,document);
+    </script>
+<script>
+    function detectIE() {
+        var ua = window.navigator.userAgent;
+
+        var msie = ua.indexOf('MSIE ');
+        if (msie > 0) {
+            // IE 10 or older => return version number
+            return parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
+        }
+        return false;
+    }
+
+    if(detectIE() === 6 || detectIE() === 7 || detectIE() === 8){
+        $.noConflict();
+        $ = jQuery;
+    }
+    
+    if(typeof String.prototype.trim !== 'function') {
+        String.prototype.trim = function() {
+            return this.replace(/^\s+|\s+$/g, ''); 
+        };
+    }
+
+    if (!String.prototype.startsWith) {
+        String.prototype.startsWith = function(search, rawPos) {
+            var pos = rawPos > 0 ? rawPos|0 : 0;
+            return this.substring(pos, pos + search.length) === search;
+        }
+    }
+
+    if (!String.prototype.includes) {//To check browser supports or not
+        String.prototype.includes = function (str) {//If not supported, then define the method
+            return this.indexOf(str) !== -1;
+        }
+    }
+
+    if (!Object.keys) Object.keys = function(o) {
+        if (o !== Object(o))
+            throw new TypeError('Object.keys called on a non-object');
+        var k=[],p;
+        for (p in o) if (Object.prototype.hasOwnProperty.call(o,p)) k.push(p);
+        return k;
+    }
+    </script>
+<script type="text/javascript" src="/static/ft/js/jquery/jquery.swfobject.min.js"></script>
+<script type="text/javascript" src="/static/ft/js/jquery/jquery.blockUI.js"></script>
+<script type="text/javascript" defer src="/static/ft/js/pngfix.js"></script>
+<script type="text/javascript" src="https://flashthemes.net/static/ft/js/jquery/jquery.placeholder.min.js"></script>
+<script src="/static/ft/po/ftserver_js-en_US.json"></script>
+<script type="text/javascript" src="/static/ft/js/ftfan.js"></script>
+<script type="text/javascript">
+    jQuery.flash.expressInstall = "/static/libs/expressInstall.swf";
+
+    var I18N_LANG = 'en_US';
+    var GT = new Gettext({
+        'locale_data': json_locale_data
+    });
+</script>
+<link rel="alternate" href="https://flashthemes.net/ajax/rss/WhatsNew" type="application/rss+xml" title="FlashThemes - Recently Released Videos" />
+<link rel="alternate" href="https://flashthemes.net/ajax/rss/MostWatched" type="application/rss+xml" title="FlashThemes - Most Watched" />
+<link href="/static/ft/css/index.css" rel="stylesheet" type="text/css" />
+<link href="/static/ft/css/rssmovies.css" rel="stylesheet" type="text/css" />
+<script src="/static/ft/js/rssmovies.js"></script>
+</head>
+<body onresize>
+
+<div class="header">
+<div id="header_underlay"></div>
+<div class="logo">
+<a id="gologo" href="/" title="FlashThemes">
+<img alt="FlashThemes logo" src="/static/ft/img/v2/Ftlg-halloween.png" height="55">
+</a>
+</div>
+<div id="headertopnavmenu" class="globalnav">
+<ul id="top_nav" class="header_block">
+<li class="top_nav_item user">
+<a href="/dashboard" id="usernameheader">Dominic Jennings</a>
+<ul class="top_nav_submenu">
+<li class="first">
+<div class="arrow"></div><a href="/dashboard" id="hometext">Your Home</a>
+</li>
+<li><a href="/dashboard#videos" id="videostext">Your Videos</a></li>
+<li><a href="/dashboard#badges" id="badgestext">Your Badges</a></li>
+<li><a href="/dashboard#friends" id="friendstext">Your Friends</a></li>
+<li><a href="/dashboard#messages" id="messagestext">Your Messages</a></li>
+<li><a href="/dashboard#settings" id="settingstext">Account Settings</a></li>
+<li><a href="/user/4580" id="profiletext">Public Profile</a></li>
+<li><a href="/logout" style="color: red;" id="logouttext">Logout</a></li>
+</ul>
+</li>
+<li class="top_nav_item explore">
+<a href="/watch">Explore</a>
+<ul class="top_nav_submenu">
+<li class="first">
+<div class="arrow"></div><a href="/watch">Animations</a>
+</li>
+<li><a href="/mingle">Community</a></li>
+
+</ul>
+</li>
+<li class="top_nav_item shop">
+<a href="/shop">Shop</a>
+</li>
+<li class="top_nav_item search">
+<a href="javascript:;" onclick="doSearch()">
+<div id="top_nav_search_icon" title="Search"></div>
+</a>
+<input type="text" id="searchbar" value placeholder="Search query">
+<script>
+        $(document).ready(function() {
+            section = "videos";
+            if(localStorage.getItem("search") == null) {
+                localStorage.setItem("search", section);
+            } else {
+              if(!localStorage.getItem("search").match(/[videos|users|shop]/gm)){
+                localStorage.setItem("search", section);
+              }
+              section = localStorage.getItem("search");
+            }
+        })
+        $( "#searchbar" ).autocomplete({
+          source: function( request, response ) {
+              response([
+                {
+                  section: "videos",
+                  value: "Search " + request.term + " in Animations"
+                },
+                {
+                  section: "users",
+                  value: "Search " + request.term + " in Users"
+                },
+                {
+                  section: "shop",
+                  value: "Search " + request.term + " in Shop"
+                },
+              ])
+          },
+          change : function(event, ui) {
+              return false;
+          },
+          focus: function( event, ui ) {
+            if(event.originalEvent.originalEvent.type == "keydown"){
+              return false;
+            }
+          },
+          select: function (e, ui) {
+            localStorage.setItem("search", ui.item.section);
+            section = ui.item.section;
+            doSearch();
+            return false;
+          },
+        });
+        </script>
+</li>
+<li class="top_nav_item create">
+<a href="/create">Create</a>
+</li>
+</ul>
+<div class="header_block">
+<div id="top_nav_points" class="value"><p class="value">10</p><div class="icon"></div></div>
+</div>
+<!--[if lte IE 6]>
+<script type="text/javascript">
+jQuery('#top_nav li').bind('mouseover', function(e) {
+	jQuery(this).addClass('hover');
+});
+jQuery('#top_nav li').bind('mouseout', function(e) {
+	jQuery(this).removeClass('hover');
+});
+jQuery('.money').bind('mouseover', function(e) {
+	jQuery(this).addClass('hover');
+});
+jQuery('.money').bind('mouseout', function(e) {
+	jQuery(this).removeClass('hover');
+});
+</script>
+<![endif]--> </div>
+<a name="skipmenu"></a>
+<script>
+          $.ajax({
+            type: "POST",
+            url: "/ajax/getNotifications/",
+            success: function(data) {
+              if(data.error){
+                displayFeedback("1" + GT.gettext("Error occurred, please try again later."))
+              }else{
+                if(data.badges > 0){
+              $("#header_new_badge a").text(data.badges)
+              $("#header_alert").css("display","block")
+              $("#header_new_badge").css("display","block")
+                }
+                if(data.messages > 0){
+              $("#header_new_message a").text(data.messages)
+              $("#header_alert").css("display","block")
+              $("#header_new_message").css("display","block")
+                }
+              }
+            },
+            error: function(data) {
+            displayFeedback("1" + GT.gettext("Error occurred, please try again later."))
+            return false;
+          },
+          processData: false,
+          contentType: 'application/json',
+          dataType: "json"
+          })
+      </script>
+<style>
+        .header_alerts_subnav{
+          list-style-type: none;
+          float: right;
+        }
+        .header_alerts_subnav li{
+          float: left;
+          list-style-type: none;
+          margin: 0px 0px;
+        }
+        </style>
+<div id="header_alert" class="header_alerts_subnav" style="display: none;">
+<li>
+<span id="header_new_badge" style="display: none; height:17px;"><a href="https://flashthemes.net/dashboard#badges"></a></span>
+</li>
+<li>
+<span id="header_new_message" style="display: none; margin-left: 10px;"><a href="https://flashthemes.net/dashboard#messages"></a></span>
+</li>
+</div>
+</div>
+<div class="container homepage">
+<script>
+    function datetosecondsinday(date) {
+        return (date.getHours() * 3600) + (date.getMinutes() * 60) + date.getSeconds();
+    }
+    function getBg() {
+        var currentTime = Number(datetosecondsinday(new Date()));
+        var percentage = 0;
+        var num = 0;
+        var nextnum = 1;
+        if (new Date().getMonth() === 11) { //december
+          var colors = [
+              ["0, 176, 255", "255, 255, 255"]
+          ]
+          percentage = 100;
+          num = 0;
+          nextnum = 0;
+        }
+        else if (new Date().getMonth() === 9) { //october
+          var colors = [
+              ["63, 29, 100", "220, 83, 21"]
+          ]
+          percentage = 100;
+          num = 0;
+          nextnum = 0;
+        } else {
+            var colors = [
+                ["74, 73, 144", "189, 61, 23"],
+                ["136, 145, 253", "255, 137, 54"],
+                ["100, 137, 242", "207, 107, 214"],
+                ["0, 176, 255", "245, 153, 242"],
+                ["125, 46, 64", "37, 21, 30"],
+                ["59, 43, 99", "29, 21, 70"],
+                ["24, 11, 56", "36, 24, 97"]
+            ];
+            // midnight
+            if (0 <= currentTime && currentTime < 3600) {
+                percentage = 1 - (currentTime / 7200) + 0.5;
+                num = 6;
+                nextnum = 5;
+            }
+            // night
+            if (3600 <= currentTime && currentTime < 14400) {
+                percentage = 1 - (currentTime - 3600) / 10800;
+                num = 5;
+                nextnum = 0;
+            }
+            // dawn
+            if (14400 <= currentTime && currentTime < 21600) {
+                percentage = 1 - (currentTime - 14400) / 7200;
+                num = 0;
+                nextnum = 1;
+            }
+            // sunrise
+            if (21600 <= currentTime && currentTime < 43200) {
+                percentage = 1 - (currentTime - 21600) / 21600;
+                num = 1;
+                nextnum = 2;
+            }
+            // noon
+            if (43200 <= currentTime && currentTime < 61200) {
+                percentage = 1 - (currentTime - 43200) / 18000;
+                num = 2;
+                nextnum = 3;
+            }
+            // sunset
+            if (61200 <= currentTime && currentTime < 64800) {
+                percentage = 1 - (currentTime - 61200) / 3600;
+                num = 3;
+                nextnum = 4;
+            }
+            // dusk
+            if (64800 <= currentTime && currentTime < 79200) {
+                percentage = 1 - (currentTime - 64800) / 10800;
+                num = 4;
+                nextnum = 5;
+            }
+            // night
+            if (79200 <= currentTime && currentTime < 82800) {
+                percentage = 1 - (currentTime - 79200) / 14400;
+                num = 5;
+                nextnum = 6;
+            }
+            // midnight
+            if (82800 <= currentTime && currentTime <= 86400) {
+                percentage = 1 - (currentTime - 82800) / 3600;
+                num = 6;
+                nextnum = 5;
+            }
+        }
+        function rgba2hex(orig) {
+            var a, isPercent,
+                rgb = orig.replace(/\s/g, '').match(
+                    /^rgba?\((\d+),(\d+),(\d+),?([^,\s)]+)?/i),
+                alpha = (rgb && rgb[4] || "").trim(),
+                hex = rgb ?
+                (rgb[1] | 1 << 8).toString(16).slice(1) +
+                (rgb[2] | 1 << 8).toString(16).slice(1) +
+                (rgb[3] | 1 << 8).toString(16).slice(1) : orig;
+            if (alpha !== "") {
+                a = alpha;
+            } else {
+                a = 01;
+            }
+            hex = hex + a;
+            return hex;
+        }
+        $('html').attr('style',
+            'background: url(/static/ft/img/index/fade.png) repeat-x, linear-gradient(rgba(' +
+            colors[num][0] + ', ' + percentage + '), rgba(' + colors[num][
+            1] + ', ' + percentage + ')), linear-gradient(rgba(' + colors[
+                nextnum][0] + ', 1), rgba(' + colors[nextnum][1] +
+            ', 1)), linear-gradient(rgba(' + colors[num][1] + ', ' +
+            percentage + '), rgba(' + colors[num][1] + ',' + percentage +
+            ')), rgba(' + colors[nextnum][1] +
+            ', 1); background-color: white; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=\'' +
+            rgba2hex("rgba('" + colors[num][0] + "', '" + percentage +
+            "')") + '\', endColorstr=\'' + rgba2hex("rgba('" + colors[num][
+                1] + "', '" + percentage + "')") + '\', GradientType=1 ); ')
+    }
+    getBg();
+    /*setInterval(() => {
+      getBg();
+    }, 1000)*/
+</script>
+<span id="cookieErr"></span>
+
+
+<div class="content">
+
+<script type="text/javascript" async src="/static/ft/js/amplitude-4.1.1-min.gz.js"></script>
+<script type="text/javascript" src="/static/ft/js/go_amp.js.gz.js"></script>
+<script type="text/javascript" src="/static/ft/js/analytics.js"></script>
+<script>
+  var playedvideo = 0;
+  (function() {
+
+      'use strict';
+
+      var studioMode = 'full',
+          themeName = 'whiteboard',
+          copiedId = '',
+          editType = null;
+
+      switch (studioMode) {
+          case 'full':
+              editType = AMPLITUDE_EVENT_PROPERTIES.VM_NEW;
+              break;
+          case 'edit':
+              editType = AMPLITUDE_EVENT_PROPERTIES.VM_EDIT;
+              break;
+          case 'copy':
+              editType = AMPLITUDE_EVENT_PROPERTIES.VM_COPY;
+              break;
+          case 'remix':
+              editType = AMPLITUDE_EVENT_PROPERTIES.VM_REMIX;
+              break;
+          default:
+              break;
+      }
+      if (editType !== null) {
+          $(window).on('amplitude_loaded', function() {
+              logAmplitudeEvent(AMPLITUDE_EVENT.LAUNCH_VM, {
+                  theme: themeName,
+                  edit_type: editType,
+                  video_id: '',
+                  copied_id: copiedId
+              }, {
+                  latest_vm_launched: AMPLITUDE_EVENT_PROPERTIES.LEGACY_VM,
+                  latest_vm_launched_legacy_date: '2019-08-23 15:36:05'
+              });
+          });
+      }
+  }());
+
+  // Amplitude interface for Flash player.
+  function logAmplitudeEvent(eventName, eventProperties, userData) {
+      if (typeof amplitude === 'object') {
+          if (eventName === AMPLITUDE_EVENT.WATCH_EMBED_VIDEO) {
+            if(playedvideo == 0){
+              var movieId;
+              if(eventProperties["embedded_video"])
+              {
+                  movieID = eventProperties["embedded_video"];
+              }
+                $.ajax({
+                  type: "POST",
+                  url: "/ajax/watchedVideo/" + movieID + "/",
+                  success: function(B) {
+                    playedvideo = 1;
+                  }
+                }) 
+            }
+          }
+          if (userData !== undefined) {
+              amplitude.getInstance().setUserProperties(userData);
+          }
+          amplitude.getInstance().logEvent(eventName, eventProperties);
+      }
+  }
+</script>
+<div id="campaign_banner_container">
+<div class="header_shadow"></div>
+<div class="campaign_banner banner1" style="background-image: url(/static/ft/img/index/mainbanner02.png);">
+<div id="index_signup" class="column">
+<a href="/create" class="buttonbase buttongreen2 dark" id="index_signup_submit">
+<div class="buttontitle">Create a Video</div>
+</a>
+<a href="/dashboard" class="buttonbase buttonblue dark" id="index_signup_submit">
+<div class="buttontitle">Your Dashboard</div>
+</a>
+<a href="/user/4580" class="buttonbase buttongray2 dark" id="index_signup_submit">
+<div class="buttontitle">Your Profile</div>
+</a>
+<style>
+          #index_signup {
+            top: 0px;
+          }
+          .buttonbase {
+            margin: 59.2px auto;
+            float: none;
+            display: block;
+          }
+        </style>
+</div>
+</div>
+</div>
+<div class="main_content">
+<pre></pre>
+<embed src="/home_banner-en_US.swf?v=412" quality="high" bgcolor="#eeeeee" width="930" height="280" id="BannerContainer" FlashVars="version=412&initial_index=2&isUserLogined=Y" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflash" />
+<pre></pre>
+<script type="text/javascript">
+    var rssobj = {
+      "rssplayer_src_path": "/static/libs/rssplayer2013.swf",
+      "autostart": false,
+      "rsspath": "",
+      "movieOwnerId": "",
+      "userId": "",
+      "username": "",
+      "uemail": "",
+      "api_server": "https:\/\/flashthemes.net\/",
+      "isShowGetWidget": "1"
+    };
+  </script>
+<div class="wideleft">
+<div style="margin:0px 0 10px"></div>
+<div id="movielist">
+<div class="tabcontainer clearfix">
+<ul>
+<li>
+<div id="sptab" class="tabinactive">
+<div id="sptabtextholder" class="tabc">
+<a id="sptablink" href="javascript:goVoid();">STAFF PICKS</a>
+</div>
+</div>
+</li>
+<li>
+<div id="mrtab" class="tabinactive">
+<div id="mrtabtextholder" class="tabc">
+<a id="mrtablink" href="javascript:goVoid();">MOST RECENT</a>
+</div>
+</div>
+</li>
+<li>
+<div id="mptab" class="tabinactive">
+<div id="mptabtextholder" class="tabc">
+<a id="mptablink" href="javascript:goVoid();">TOP ANIMATIONS</a>
+</div>
+</div>
+</li>
+<li>
+<div id="mvtab" class="tabinactive">
+<div id="mvtabtextholder" class="tabc">
+<a id="mvtablink" href="javascript:goVoid();">MOST WATCHED</a>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="tabbox">
+<div id="rssmoviescontainer">
+<div style="position:relative">
+<div style="position:relative">
+<div id="rssmoviesdiv" align="center" style="margin:0 auto;width:570px;height:550px;">
+<div class="movieplayer">
+<h1 id="movietitle" style="padding: 0; margin: 0;"></h1>
+<div id="player" style="margin: 27.5px 0; width: 550px; height: 384px;">
+<div id="moviepreview">
+<a id="playbutton"></a>
+</div>
+</div>
+<div id="endscreen" class="rssendscreen" style="display: none;">
+<div class="youjustwatched">
+<h1 class="youjustwatchedtext">You just watched</h1>
+<h1 id="endscreentitle"></h1>
+<h1 id="endscreenowner"></h1>
+</div>
+<div class="endscreenbuttons">
+<a id="replaybutton">
+<div class="endscreenbutton"></div>
+<div class="buttontext">Replay</div>
+</a>
+<a id="sharebutton">
+<div class="endscreenbutton" style="background-color: #fe6704;"></div>
+<div class="buttontext">Share</div>
+</a>
+<a id="nextbutton">
+<div class="endscreenbutton">5</div>
+<div class="buttontext">Next Movie &gt;</div>
+</a>
+</div>
+</div>
+<div class="info">
+<span id="ownername"></span>
+<div class="views" id="views" title="views"></div>
+</div>
+</div>
+<div class="rssmovies">
+<a class="rssmoviesnavprev">
+<div class="pagnationprev" id="pagnationprev"></div>
+</a>
+<div id="rssmovies"></div>
+<a class="rssmoviesnavnext">
+<div class="pagnationnext" id="pagnationnext"></div>
+</a>
+</div>
+<div class="rssmoviesunder"></div>
+</div>
+<script>initRSSTabs('mptab');</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="narrowright">
+<div class="iblock">
+<div id="twitterdiv1">
+This content requires the Flash Player: <a href="https://flashthemes.net/getflash/">Get Flash</a>
+</div>
+<div class="rate_ani">
+<script>
+        $('#twitterdiv1').flash({
+            id: 'ads',
+            swf: "/static/ft/swf/bird_design4m.swf",
+            height: 70,
+            width: 320,
+
+            scale: "exactfit",
+	          wmode: "transparent",
+            bgcolor: "#000000",
+            quality: "high",
+            name: "ads"
+        })
+        </script>
+</div>
+</div>
+<iframe src="https://discord.com/widget?id=1009217038247530630&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+</div>
+<div style="clear:both"></div>
+</div>
+</div>
+
+
+<div class="footer clearfix">
+<div class="footernav clearfix">
+<div class="footer_block">
+<div class="footer_block_text" style="font-weight:bold;font-size:16px;">About FlashThemes</div>
+<div class="footer_block_text"><a href="/aboutus">Who we are</a></div>
+
+<div class="footer_block_text"><a href="https://twitter.com/ThemesFlash">Twitter</a></div>
+<div class="footer_block_text"><a href="https://discord.gg/flashthemes">Discord</a></div>
+</div>
+<div class="footer_block" style="border-right:none;">
+<div class="footer_block_text" style="font-weight:bold;font-size:16px;">Usage Guidelines</div>
+<div class="footer_block_text"><a href="/termsofuse">Terms of Use</a></div>
+<div class="footer_block_text"><a href="/legal">Legal Notices</a></div>
+<div class="footer_block_text"><a href="/privacy">Privacy Policy</a></div>
+</div>
+<div class="footer_right_block">
+<div class="right_mid">
+<div class="footer_right_block_text" style="font-weight:bold;font-size:16px;">Getting Help</div>
+<div class="footer_right_block_text"><a href="javascript:fullscreenStudio('/videomaker/custom/tutorial/');">Tutorial</a></div>
+
+<div class="footer_right_block_text"><a href="/faq">FAQs</a></div>
+<div class="footer_right_block_text"><a href="/getflash">Get Flash</a></div>
+</div>
+</div>
+<div class="footer_img" style="position: absolute; bottom: 15px; right: 152px;">
+<img src="https://flashthemes.net/static/ft/img/v2/img_footer_char.png" width="49" height="149" onload="javascript:iePngFix(this,49,149);">
+</div>
+</div>
+</div>
+<div class="bottomlangbar">
+<span class="element">Select your preferred language:</span>
+<span class="element">
+<span class="selected">English</span>
+</span>
+<span class="element">
+<a onclick="chooseLanguage('es_ES')">Español</a>
+</span>
+<span class="element">
+<a onclick="chooseLanguage('pt_BR')">Português (Brazilian)</a>
+</span>
+<span class="element">
+<a onclick="chooseLanguage('fr_FR')">Français</a>
+</span>
+</div>
+
+</div>
+<div class="footer_bottom">
+<div class="footer_bottom_right">
+<div class="copyright">© FlashThemes 2020 - 2024<br/><br/></div>
+</div>
+</div>
+<div id="studio_container" style="display: none;">
+<div id="studio_holder">
+<div style="top: 50%; position: relative;">
+This content requires the Flash Player: <a href="https://flashthemes.net/getflash/">Get Flash</a>
+</div>
+</div>
+</div>
+
+<div id="growlfeedback_block" class="growlUI" style="display:none">
+<div id="growlnotify"><img src="https://flashthemes.net/static/ft/img/common/feedback/tick.png" width="52" height="52" onload="javascript:iePngFix(this,52,52);"></div>
+<div id="growlerror"><img src="https://flashthemes.net/static/ft/img/common/feedback/cross.png" width="52" height="52" onload="javascript:iePngFix(this,52,52);"></div>
+<div class="growlcontent">
+<div class="growltitle">Notification</div>
+<div id="growlfeedback"></div>
+</div>
+</div>
+<script>
+    $(document).ready(function() {
+        if (window.location.href.includes("?feedback=")) {
+            var params = new URLSearchParams(window.location.search);
+            displayFeedback(params.get('feedback').split('/')[0]);
+        }
+        if (window.location.href.includes("?showlogin=")) {
+            showLogin(250);
+        }
+        if (window.location.href.includes("?showsignup=")) {
+            showSignup(250);
+        }
+    })
+</script>
+<div id="offer_container">
+</div>
+<style id="usercss"></style>
+<div id="darkenScreenObject" style="display:none;"></div>
+<div style="display: none; position: absolute; margin-top: 0px; height: 355px; width: 550px; left: 230px; top: 0px; background: none; z-index: 50;" id="overlayObjectGlobal">
+</div>
+<div style="display: none; position: absolute; margin-top: 150px; height: 355px; width: 550px; left: 50%; transform: translateX(-50%); top: 125px; background: none;" id="overlayObject">
+<div id="overlayReportBox" style="display:none; position: absolute;">
+<div id="overlayReportBoxTitle">
+<span id="overlayReportBoxTitle"></span>
+</div>
+<div id="overlay_close" onclick="javascript:hideReportBox();">&nbsp;</div>
+<div class="overlaybody" style="float:left;padding: 10px 15px;width: 350px;">
+<span id="reportBoxMessage"></span>
+<br>
+<br>
+<textarea id="reportTextBox" rows="4" cols="42" required maxlength="255"></textarea>
+<br>
+<div id="overlayReportSendBtn">
+<input type="button" value="Confirm" onclick="javascript:hideInputBox();">
+</div>
+<div id="overlayReportCancelBtn">
+<input type="button" value="Cancel" onclick="javascript:hideInputBox();">
+</div>
+</div>
+</div>
+<div id="overlayAlertBox" style="display:none; position: absolute;">
+<div id="overlayAlertBoxTitle">
+<span id="overlayAlertBoxTitle"></span>
+</div>
+<div id="overlay_close" onclick="javascript:hideAlertBox();">&nbsp;</div>
+<div class="overlaybody" style="text-align: left;float:left; padding: 10px 15px;">
+<span id="alertBoxMessage"></span>
+<br>
+<div id="overlayAlertBoxBtn">
+<input type="button" value="OK" onclick="javascript:hideAlertBox();">
+</div>
+</div>
+</div>
+<div id="overlayConfirmBox" style="display:none; position: absolute;">
+<div id="overlayConfirmBoxTitle"></div>
+<div id="overlay_close" onclick="javascript:hideConfirmBox();">&nbsp;</div>
+<div class="overlaybody" style="text-align: left;float:left; padding: 10px 15px;">
+<span id="confirmBoxMessage"></span>
+<br>
+<div id="overlayConfirmConfirmBtn">
+<input type="button" value="Confirm" onclick="javascript:hideConfirmBox();">
+</div>
+<div id="overlayConfirmCancelBtn">
+<input type="button" value="Cancel" onclick="javascript:hideConfirmBox();">
+</div>
+</div>
+</div>
+<div id="overlayInputBox" style="display:none; position: absolute;">
+<div id="overlayInputBoxTitle">
+<span id="overlayInputBoxTitle"></span>
+</div>
+<div id="overlay_close" onclick="javascript:hideInputBox();">&nbsp;</div>
+<div class="overlaybody" style="text-align: left;float:left; padding: 10px 15px;">
+<span id="inputBoxMessage"></span>
+<br>
+<input type="text" id="inputTextBox" style="width: 290px; margin: 15px 8px 0 8px;">
+<br>
+<div id="overlayInputSaveBtn">
+<input type="button" value="Confirm" onclick="javascript:hideInputBox();">
+</div>
+<div id="overlayInputCancelBtn">
+<input type="button" value="Cancel" onclick="javascript:hideInputBox();">
+</div>
+</div>
+</div>
+<div class="lightbox" id="claim_badge_overlay" style="display:none;">
+<div class="lightbox_wrapper">
+<a onclick="jQuery.unblockUI();" class="close_btn">×</a>
+<h1 id="badge_text_editable"></h1>
+<hr>
+<div class="inputRow">
+<div class="inputData">
+<div class="badges_div" id="claim_badge_overlay_claim">
+<div class="badges_list">
+</div>
+</div>
+<div class="badges_div" id="claim_badge_overlay_claimed" style="display:none;">
+<div class="big_badge_claim_overlay">
+<div class="xpbig">
+<div class="points"></div>
+</div>
+<div class="ftbig">
+<div class="points"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="overlayProgressBox" style="display:none; position: absolute;">
+<div id="overlayProgressBoxTitle">
+<span id="overlayProgressBoxTitle"></span>
+</div>
+<div id="overlay_close" onclick="javascript:hideProgressBox();">&nbsp;</div>
+<div class="overlaybody" style="text-align: left;float:left; padding: 10px 15px;">
+<span id="progressBoxMessage"></span>
+<br>
+<span id="progressBoxMessage2">Initializing.. </span>
+<br>
+<span id="progressBoxDownload" style="display:none"></span>
+<br>
+<div class="loadingBar"><div class="loadingBarFilled"></div></div>
+<br>
+<div id="overlayProgressBoxBtn">
+<input type="button" value="OK" onclick="javascript:hideProgressBox();">
+</div>
+</div>
+</div>
+<div id="overlayHTMLBox" style="display:none; position: absolute;">
+<div id="overlayHTMLBoxTitle">
+<span id="overlayHTMLBoxTitle"></span>
+</div>
+<div id="overlayHTML_close" onclick="javascript:hideHTMLBox();">&nbsp;</div>
+<div class="overlaybody" style="text-align: left;float:left; padding: 10px 15px;clear:both;width:470px;">
+<span id="HTMLBoxMessage"></span>
+</div>
+<div id="HTMLBoxTP" style="display:none"></div>
+</div>
+<div id="overlayGeneral" style="display:none;width:700px;position:relative;">
+<div class="overlay_header">
+<div class="overlayheader">
+<div class="overlay_header_title"><span id="OG_title"></span></div>
+<div class="overlayClose" style="margin: 0;">
+<a href="javascript:goVoid();" onclick="javascript:hideLogin();"></a>
+</div>
+</div>
+</div>
+<div style="float:left; margin:0px; padding: 0px; width:700px;">
+<div style="float:left; margin:0px; padding: 0px; width:700px;">
+<span id="tracker_id" style="display:none"></span>
+<div class="overlayClose" id="OG_close_btn">
+<a href="javascript:goVoid();" onclick="javascript:hideOG();"></a>
+</div>
+<div style="background-color:#fff; position:relative;float:left;width:700px;">
+<span id="OG_content"></span>
+</div>
+</div>
+</div>
+</div>
+<div id="overlayWaiting" style="display:none; position: absolute;">
+<div id="overlayWaitingTitle"></div>
+<div class="overlaybody" style="text-align: left;padding-left:103px">
+Please wait <span id="WaitingDotDotDot"></span>
+</div>
+</div>
+<div id="overlayShareEmail" style="display:none; position: absolute;">
+<div id="overlayShareEmailClose">
+<a href="javascript:showContactOverlay(false);"></a>
+</div>
+<div id="eaf_movie_enc_id" style="display:none">04CNTHizGWiA</div>
+<span id="eaf_body"></span>
+</div>
+<div id="overlayLogin" style="display:none;">
+<div class="overlayLoginContent">
+<div class="overlayheader">
+<div class="overlay_header_title">Login</div>
+<div class="overlayClose" style="margin: 0;">
+<a href="javascript:goVoid();" onclick="javascript:hideLogin();"></a>
+</div>
+</div>
+<div class="overlayLoginForm">
+<form id="loginform" name="loginform" method="post" action="javascript:siteLogin('loginform');">
+<div id="loginErr" class="loginErr"></div>
+<input type="hidden" name="lc" value="en_US">
+<input type="hidden" value="/" name="returnto">
+<div class="slabel">Email</div>
+<div class="field">
+<div class="fieldcontent">
+<input class="fieldinput" maxlength="255" name="email" id="siteLoginBox" autocomplete="email" placeholder="Your Email Address">
+</div>
+</div>
+<div class="slabel">Password</div>
+<div class="field">
+<div class="fieldcontent">
+<input class="fieldinput" type="password" maxlength="50" name="password" onkeypress="javascript:checkEnter(event, 'siteLogin', '\'loginform\'');" autocomplete="current-password" placeholder="Your Password">
+</div>
+</div>
+<div class="slabel"></div>
+<div class="field">
+<a class="sitebtn" href="javascript:siteLogin('loginform');">
+<div id="site_login_button" class="site_login_button">
+<li id="site_login_buttoncenterinactive">
+<span class="site_login_button_text">Login</span>
+</li>
+</div>
+</a>
+<input type="hidden" value="Login" name="submit" id="login_submit">
+</div>
+<div class="forgot_password">
+<a href="/forgotpassword">Forgot your password?</a>
+</div>
+<div class="verify_email">
+<a href="/verifyemail">Didn't get your verification email?</a>
+</div>
+</form>
+</div>
+</div>
+</div>
+<div id="overlaySignup" style="display:none;">
+<div class="overlayLoginContent">
+<div class="overlayheader">
+<div class="overlay_header_title">Sign Up</div>
+<div class="overlayClose" style="margin: 0;">
+<a href="javascript:goVoid();" onclick="javascript:hideSignup();"></a>
+</div>
+</div>
+<div style="padding: 0 10px;float:left;">
+<div class="overlay_tag_title">Sign up today! It's free and easy!</div>
+</div>
+<div class="overlayLoginForm">
+<form id="signupform" name="signupform" action="javascript:siteSignup('signup');" method="post">
+<input type="hidden" name="lc" value="en_US" />
+<input type="hidden" value="/" name="returnto">
+<div id="email_Err" class="loginErr">&nbsp;</div>
+<div class="slabel">Email</div>
+<div class="field">
+<div style="WIDTH: 214px;height:26px;border:2px solid #BBB;padding:5px;">
+<input style="WIDTH: 214px;height:26px;border:0px;font-size:20px;" maxlength="255" name="email" autocomplete="email" placeholder="Your Email Address">
+</div>
+</div>
+<div id="nickname_Err" class="loginErr">&nbsp;</div>
+<div class="slabel">Display Name</div>
+<div class="field">
+<div style="WIDTH: 214px;height:26px;border:2px solid #BBB;padding:5px;">
+<input style="WIDTH: 214px;height:26px;border:0px;font-size:20px;" maxlength="21" name="username" autocomplete="username" placeholder="Your Display Name">
+</div>
+</div>
+<div id="password_Err" class="loginErr">&nbsp;</div>
+<div class="slabel">Password</div>
+<div class="field">
+<div style="WIDTH: 214px;height:26px;border:2px solid #BBB;padding:5px;">
+<input style="WIDTH: 214px;height:26px;border:0px;font-size:20px;" type="password" maxlength="50" name="password1" onkeypress="javascript:checkEnter(event, 'siteSignup', '\'signup\'');" autocomplete="new-password" placeholder="Your Password">
+</div>
+</div>
+<div class="slabel">Confirm Password</div>
+<div class="field">
+<div style="WIDTH: 214px;height:26px;border:2px solid #BBB;padding:5px;">
+<input style="WIDTH: 214px;height:26px;border:0px;font-size:20px;" type="password" maxlength="50" name="password2" onkeypress="javascript:checkEnter(event, 'siteSignup', '\'signup\'');" autocomplete="new-password" placeholder="Confirm Password">
+</div>
+</div>
+<div class="slabel" style="DISPLAY: none">Gender</div>
+<div class="field" style="DISPLAY: none">
+<input type="radio" checked value="m" name="gender">male
+<input type="radio" value="f" name="gender">female
+</div>
+<div id="terms_Err" class="loginErr">&nbsp;</div>
+<div class="signupLink" style="WIDTH: 300px; float:left; padding-top:10px; padding-left:195px; font-size:14px;">
+<input type="checkbox" name="termsofuse">I agree to the
+<a href="/termsofuse">Terms of Use</a>.
+</div>
+<div class="slabel"></div>
+<div class="field" style="float:left;width:300px;padding-top:10px;padding-left:195px;">
+<a class="sitebtn" href="javascript:siteSignup('signup');">
+<div id="site_signup_button" class="site_login_button">
+<li id="site_login_buttoncenterinactive">
+<span class="site_login_button_text">Sign Up</span>
+</li>
+</div>
+</a>
+<input type="hidden" value="Sign Up" name="submit" id="signup_submit">
+</div>
+<div style="float:left;width:190px;padding-top:5px;padding-left:10px;font-size:12px;">Registered?
+<a href="javascript:hideSignup();javascript:showLogin(350);">Login here</a>.
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

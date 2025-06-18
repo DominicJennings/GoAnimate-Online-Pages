@@ -1,0 +1,264 @@
+<html><head>
+		<meta charset="UTF-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta http-equiv="content-script-type" content="text/javascript">
+		<meta http-equiv="content-style-type" content="text/css">
+		<script src="/pages/js/core-js.js"></script>
+		<script src="/pages/js/regenerator-runtime.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+		<title>Settings - Wrapper: Online Diamond - All In One LVM</title>
+		<meta name="description" content="Wrapper: Online Diamond's settings">
+		<meta property="og:site_name" content="Wrapper Online Diamond - All In One LVM">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="Settings - Wrapper Online Diamond - All In One LVM">
+		<meta property="og:description" content="Wrapper Online Diamond's Settings">
+		<meta property="og:url" content="http://wrapperonlinediamond.waterdroprio.pp.ua/settings">
+		<meta property="og:image:secure_url" content="http://wrapperonlinediamond.waterdroprio.pp.ua/pages/img/logo.png"> 
+		<meta property="og:image" content="http://wrapperonlinediamond.waterdroprio.pp.ua/pages/img/logo.png"> 
+		<meta name="keywords" content="Animation, eCard, flash free, web 2.0, cartoon, comics, create animations free, movie, film, video, comedy, drag and drop, wrapper online diamond, wrapper offline diamond, wrapper diamond online, wrapper diamond, wrapperonlinediamond">
+		<meta name="theme-color" content="cyan">
+		<link rel="stylesheet" type="text/css" href="/pages/css/global.css">
+		<link rel="stylesheet" type="text/css" href="/pages/css/importer.css">
+		<script>var IS_STUDIO = false;</script>
+		<script src="/pages/js/jquery.js"></script>
+		<script src="/pages/js/global.js"></script>
+	</head>
+
+	<body>
+		<header>
+	<a href="/">
+		<h1 style="margin:0"><img id="logo" src="/pages/img/logo.png" alt="Wrapper: Online Diamond"></h1>
+	</a>
+	<nav id="headbuttons">
+	
+						
+			<div class="dropdown_contain button_small">
+				<div class="dropdown_button upload_button">YOUR ACCOUNT</div>
+				<nav class="dropdown_menu">
+					<a href="javascript:void(0);">Logged in as Dominic Jennings</a>
+					<a href="/list">Your Videos</a>
+					<a href="/settings">Account Settings</a>
+					<a style="color:#dc143c;" href="/logout">Logout</a>
+				</nav>
+			</div>
+			
+			
+			
+		<div class="dropdown_contain button_small">
+			<div class="dropdown_button upload_button">UPLOAD A MOVIE</div>
+			<nav class="dropdown_menu">
+				<a onclick="document.getElementById('is-starter').checked = false;document.getElementById('file').click()">Upload as movie</a>
+				<a onclick="document.getElementById('is-starter').checked = true;document.getElementById('file').click()">Upload as starter</a>
+			</nav>
+		</div>
+		<a href="/shop" class="button_small">SHOP</a>
+		<a href="/create?filter=cc" class="button_small">CREATE A CHARACTER</a>
+		<a href="/list" class="button_small">YOUR VIDEOS</a>
+		<a href="/make" class="button_big">MAKE A VIDEO</a>
+	</nav>
+</header>
+
+<form id="movie-form" class="hide" enctype="multipart/form-data" action="#" method="post">
+	<input id="file" type="file" name="import" accept=".zip">
+	<input id="is-starter" type="checkbox" value="false">
+</form>
+
+		<main>			
+			<nav class="tabs_contain">
+				<div class="tab_buttons">
+					<h1 id="settings">Settings</h1>
+					<a href="javascript:;" class="selected" data-triggers="0">Your Account</a>
+					<a href="javascript:;" data-triggers="1">Appearance</a>
+					<a href="javascript:;" data-triggers="2" class="">Your Library</a>
+				</div>
+				<nav class="tab" style="display: block;">
+					<h2>Your Account</h2>
+
+					<h3>Change Password</h3>
+					<p><i>After changing your password, you will be prompted to log back in.</i></p>
+					<form action="/api/settings/user" method="post" name="changepassword">
+						<table>
+							<tbody><tr>
+								<td>Old Password:</td>
+								<td><input name="oldpassword" type="password" autocomplete="off"></td>
+							</tr>
+							<tr>
+								<td>New Password:</td>
+								<td><input name="newpassword" type="password" autocomplete="off"></td>
+							</tr>
+							<tr>
+								<td>Confirm New Password:</td>
+								<td><input name="newpassword2" type="password" autocomplete="off"></td>
+							</tr>
+							<tr>
+								<td colspan="2"><input type="submit" name="submit" value="CHANGE PASSWORD" class="button_big" style="border:none;width:180px;"></td>
+							</tr>
+						</tbody></table>
+					</form>
+
+				</nav>
+				<nav class="tab" style="display: none;">
+					<h2>Appearance</h2>
+
+					<h3>Dark mode</h3>
+					<p><i>Does not apply in the Video Maker or Character Creator. Applies to your current browser only.</i></p>
+					<select class="setting" id="DARK_MODE" data-local="true">
+						<option value="userSelected">User Selected</option>
+						<option value="enabled">Enabled</option>
+						<option value="disabled">Disabled</option>
+					</select>
+
+				</nav>
+				<nav class="tab" style="display: none;">
+					<h2>Your Library</h2>
+
+					<nav id="importer">
+						<nav id="import_head">
+							<button id="import-toggle" onclick="document.getElementById('importer-files').click()" class="btn btn_primary">UPLOAD FILES</button>
+							<button onclick="document.getElementById('char-file').click()" class="btn btn_primary" style="width:222px;">UPLOAD A CHARACTER</button>
+							<form>
+								<input id="importer-files" type="file" name="file" title="Upload Files" accept=".mp3,.wav,.ogg,.wma,.swf,.gif,.png,.jpg,.jpeg,.webp,.mp4,.flv" multiple="multiple" style="display:none">
+							</form>
+						</nav>
+						
+						
+					</nav>
+				</nav>
+			</nav>
+		</main>
+
+		<form class="hide" enctype="multipart/form-data" action="/api/char/upload" method="post">
+			<input id="char-file" type="file" onchange="this.form.submit()" name="import" accept=".xml">
+		</form>
+
+		<footer>
+	<nav id="foot-left">
+		<a href="/about">Who we are</a>
+		<a href="/settings">Settings</a>
+		<a href="/faq">FAQ</a>
+		<a href="/termsofuse">Terms of Use</a>
+		<a href="/privacy">Privacy Policy</a>
+		<a href="/legal">Legal Notices</a>
+		<a href="https://discord.gg/yhGAetN">Wrapper Offline Discord</a>
+		<a href="https://discord.gg/goanimate">GoAnimate City Discord</a>
+		<a href="https://groups.google.com/g/wrapper-online-diamond">Wrapper Online Diamond Google Group</a>
+		<a href="/getflash">Get Flash</a>
+	</nav>
+</footer>
+	
+
+	<script src="/pages/js/importer.js"></script>
+	<script src="/pages/js/filesize.js"></script>
+	<script>
+		function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+function _createForOfIteratorHelper(r, e) { var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (!t) { if (Array.isArray(r) || (t = _unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var _n = 0, F = function F() {}; return { s: F, n: function n() { return _n >= r.length ? { done: !0 } : { done: !1, value: r[_n++] }; }, e: function e(r) { throw r; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var o, a = !0, u = !1; return { s: function s() { t = t.call(r); }, n: function n() { var r = t.next(); return a = r.done, r; }, e: function e(r) { u = !0, o = r; }, f: function f() { try { a || null == t["return"] || t["return"](); } finally { if (u) throw o; } } }; }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+new AssetImporter(importer);
+// this is a mess of type conversion
+
+/*
+list
+*/
+var list = [];
+var _iterator = _createForOfIteratorHelper($(".setting")),
+  _step;
+try {
+  for (_iterator.s(); !(_step = _iterator.n()).done;) {
+    var elem = _step.value;
+    list.push(elem.id);
+  }
+} catch (err) {
+  _iterator.e(err);
+} finally {
+  _iterator.f();
+}
+$.getJSON("/api/settings/list", function (d) {
+  for (var _i = 0, _Object$entries = Object.entries(d); _i < _Object$entries.length; _i++) {
+    var _Object$entries$_i = _slicedToArray(_Object$entries[_i], 2),
+      key = _Object$entries$_i[0],
+      val = _Object$entries$_i[1];
+    var index = list.indexOf(key);
+    if (index < 0) {
+      continue;
+    }
+    list.splice(index, 1);
+    show(key, val);
+  }
+  // get local and cookie settings
+  list.forEach(function (key) {
+	var elem = $("#".concat(key));
+	if (elem.attr("data-local") == "true") {
+		show(key, (elem.attr("type") == "checkbox") ? (localStorage.getItem(key) == "true") : localStorage.getItem(key));
+	} else if (elem.attr("data-cookie") == "true") {
+		show(key, (elem.attr("type") == "checkbox") ? (readCookie(key) == "true") : readCookie(key));
+	}
+  });
+});
+$.getJSON("/api/assets/list", function (d) {
+  var _iterator2 = _createForOfIteratorHelper(d),
+    _step2;
+  try {
+    for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+      var info = _step2.value;
+      switch (info.type) {
+        case "bg":
+        case "prop":
+          {
+            $("\n\t\t\t\t\t\t\t<div class=\"importer_asset\">\n\t\t\t\t\t\t\t\t<div class=\"asset_metadata\">\n\t\t\t\t\t\t\t\t\t<img class=\"asset_preview\" src=\"".concat(info.id.includes("swf") ? "/pages/img/importer/image.svg" : info.subtype == "video" ? "/pages/img/importer/video.svg" : "/assets/".concat(info.id), "\" />\n\t\t\t\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t\t\t\t<h4 class=\"asset_name\">").concat(info.title, "</h4>\n\t\t\t\t\t\t\t\t\t\t<p class=\"asset_subtype\">").concat(info.type, " | ").concat(info.subtype, "</p>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t")).appendTo($("#importer-queue"));
+            break;
+          }
+        case "sound":
+          {
+            $("\n\t\t\t\t\t\t\t<div class=\"importer_asset\">\n\t\t\t\t\t\t\t\t<div class=\"asset_metadata\">\n\t\t\t\t\t\t\t\t\t<img class=\"asset_preview\" src=\"/pages/img/importer/sound.svg\" />\n\t\t\t\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t\t\t\t<h4 class=\"asset_name\">".concat(info.title, "</h4>\n\t\t\t\t\t\t\t\t\t\t<p class=\"asset_subtype\">").concat(info.type, " | ").concat(info.subtype, "</p>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t")).appendTo($("#importer-queue"));
+            break;
+          }
+      }
+    }
+  } catch (err) {
+    _iterator2.e(err);
+  } finally {
+    _iterator2.f();
+  }
+});
+
+/*
+toggle
+*/
+$(".setting").on("change", function (event) {
+  var elem = $(event.target);
+  var setting = elem.attr("id");
+  var value = elem.prop("tagName") == "SELECT" ? elem.val() : elem.prop("checked");
+  if (elem.attr("data-local") == "true") {
+    if (elem.attr("id") == "DARK_MODE") setDarkMode(value);
+    localStorage.setItem(setting, value);
+  } else if (elem.attr("data-cookie") == "true") {
+	createCookie(setting, value);
+  } else {
+    $.post("/api/settings/update", {
+      setting: setting,
+      value: value
+    }).done(function (d) {
+      if (d.status != "ok") {
+        alert("That didn't work.");
+        return;
+      }
+    });
+  }
+  show(setting, value);
+});
+function show(key, value) {
+  var elem = $("#".concat(key));
+  if (elem.prop("tagName") == "SELECT") {
+    elem.find("option[value='".concat(value, "']")).prop("selected", true);
+  } else {
+    elem.prop("checked", value);
+  }
+}
+	</script>
+
+</body></html>
